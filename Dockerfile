@@ -1,5 +1,5 @@
 ARG BUILD_ARCH
-FROM ${BUILD_ARCH}ubuntu:focal-20200423 AS add-apt-repositories
+FROM ${BUILD_ARCH}ubuntu:focal-20200115 AS add-apt-repositories
 
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y gnupg \
@@ -7,7 +7,7 @@ RUN apt-get update \
  && echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list
 
 ARG BUILD_ARCH
-FROM ${BUILD_ARCH}ubuntu:focal-20200423
+FROM ${BUILD_ARCH}ubuntu:focal-20200115
 
 ENV BIND_USER=bind \
     BIND_VERSION=9.16.1 \
